@@ -1,0 +1,51 @@
+
+  #app{
+    margin-top:50%;
+  }
+  .marquee_out{
+    top: 0px;
+    width:100vw;
+    height:35px;  
+    position:fixed;
+    overflow:hidden;
+    z-index:99;
+  }
+  .marquee_out>span{
+    position:absolute;
+    padding:5px 20px;
+    background-color:lightgray;
+    white-space:nowrap;
+    border-radius:20px;
+    letter-spacing:3px;
+    top:50%;
+    left:0;
+    transform:translate(-100%,-50%);  
+    
+  }
+  .addanimation{
+    -webkit-animation: move 5s forwards; /* Safari 4.0 - 8.0 */
+    animation: move 5s forwards;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+  .addanimationTeach{
+    -webkit-animation: move 8s forwards; /* Safari 4.0 - 8.0 */
+    animation: move 8s forwards;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    /* ease-in：慢進 → 加速至結速。
+    ease-out：快進 → 減速至結束。
+    ease-in-out：慢進 → 加速 →減速至結束。 */
+  }
+  @keyframes move{
+    0%{
+      transform:translate(-100%,-50%);
+      left:0;
+    }
+    100%{
+      transform:translate(-0%,-50%);
+      left:100%;
+    }
+  
+  }

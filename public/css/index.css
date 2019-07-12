@@ -1,0 +1,207 @@
+#bigout{
+    width: 100vw;
+    height: auto;
+    margin-top: 70px;
+}
+#bigout #Mydata{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32px;
+}
+#bigout #Mydata #Login{display: block;margin-top: 30px;padding:15px 0 10px 0;}
+#bigout #Mydata #Login input{height: 25px;}
+#bigout #Mydata #Loged{display: none;}
+#PlayerAll{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+#Playing{
+    position: fixed;
+    width: 90vw;
+    left: 5vw;
+    top: 7.5vh;
+    height: 85vh;
+    background-color:antiquewhite;
+    display: none;
+    font-size: 30px;
+    display: 5;          
+}
+#Playing #Searching{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#Playing #PlayArea{
+    width: 90%;
+    display: none;
+}
+#Pmyself,#Pother{
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+}
+#Playing #PlayArea button{display: inline-block;}
+#QUS{width: 100%;text-align: center;margin-top: 20px;}
+#QUS p{position: relative; width: 70%;margin: 0 auto;padding:10px;border: 1.5px solid black;border-radius: 10px; }
+#QUS p.TrueANS{background-color: greenyellow;}
+#QUS p.FalseANS{background-color:red;}
+#QUS p.clicked span:first-child{display: block;}
+#QUS p.EnermyChoose span:last-child{display: block;}
+#QUS .choose span:first-child{position: absolute;width:26px;height:26px;background-color: blue;border-radius: 100%;top: 50%;left: 20px;transform: translateY(-50%);display: none;}
+#QUS .choose span:last-child{position: absolute;width:26px;height:26px;background-color: blue;border-radius: 100%;top: 50%;right:20px;transform: translateY(-50%);display: none;}
+#QUS .choose span:first-child::after,#QUS .choose span:last-child::after{
+  content: '';
+  position: absolute;
+  display:inline-block;
+  width:5px;
+  height:17px;
+  border-right:5px solid #fff;
+  border-bottom:5px solid #fff;
+  transform: rotate(45deg) scale(0.8) translate(-70%,15%);
+}
+#QUS .choose{width:40%;margin-top: 20px;}
+#ANStime{width: 100%;font-size: 32px;font-weight: bold;text-align: center;padding:20px 20px;}
+#QUS button{
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  display: inline-block;
+}
+/*----Table*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+body {
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
+line-height: 1.42em;
+}
+h1 {
+font-size:3em; 
+font-weight: 300;
+line-height:1em;
+text-align: center;
+color: #4DC3FA;
+}
+h2 {
+font-size:1em; 
+font-weight: 300;
+text-align: center;
+display: block;
+line-height:1em;
+padding-bottom: 2em;
+color: #FB667A;
+}
+h2 a {
+font-weight: 700;
+text-transform: uppercase;
+color: #FB667A;
+text-decoration: none;
+}
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+font-weight: bold;
+font-size: 1em;
+text-align: left;
+color: #fff;
+}
+.container td {
+font-weight: normal;
+font-size: 1em;
+-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+ -moz-box-shadow: 0 2px 2px -2px #0E1119;
+      box-shadow: 0 2px 2px -2px #0E1119;
+}
+.container {
+text-align: left;
+overflow: hidden;
+width: 90%;
+margin: 0 auto;
+display: table;
+padding: 0 0 8em 0;
+}
+.container td, .container th {
+padding-bottom: 2%;
+padding-top: 2%;
+  padding-left:2%;  
+}
+.container tr:nth-child(odd) {
+background-color: #323C50;
+}
+.container tr:nth-child(even) {
+background-color: #2C3446;
+}
+.container tr.myBar{background-color: gray;}
+.container th {
+background-color: #1F2739;
+}
+.container td{color: aqua;}
+.container td:first-child { color: #FB667A;font-size: 24px;}
+/*----Table*/
+/* 分數總結畫面*/
+#Finished{position: fixed; width: 100vw;height: 100vh;z-index:12;background-color: rgba(0, 0, 0, 0.4);opacity: 0;display: none;top: 0;}
+#Finished #Panels{width: 80%;height: auto;padding: 50px 80px;border-radius:15px;background-color:skyblue;text-align: center;margin: 0 auto;margin-top: 50px;}
+#Finished #Panels .Content{text-align: center;}
+#Finished #Panels .Content .Result{font-size: 64px;}
+#Finished #Panels .Content .GetPoints{font-size: 36px;}
+#Finished #Panels #Closebtn{padding: 10px;border-radius: 10px;background-color: steelblue;color: #fff;}
+/* 分數總結畫面*/
+#Loged button{
+background-color: #fff;
+border: 1px solid #000;
+padding: 10px 20px;
+border-radius: 10px;
+}
+#Loged p{font-size: 20px;color:cadetblue;}
+#Loged p span{font-size: 32px;color: #000;margin-left:10px;}
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+@media screen and (max-width: 600px){
+#bigout #Mydata{width:100%;}
+body{margin: 0;}
+#Playing{
+    width: 100vw;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color:antiquewhite;
+}
+#Playing #PlayArea{width: 100%;font-size: 18px;}
+#Pmyself p:first-child, #Pother p:first-child{
+  margin-left: 2.5%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  white-space:nowrap;
+}
+#QUS p{margin-top: 15px;}
+#QUS button{
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px;
+}
+#ANStime{width: 100%;font-size: 26px;font-weight: bold;text-align: center;padding:10px 10px;}
+#QUS .choose{width:70%;margin-top:10px;}
+#Finished #Panels{width: 80%;height: auto;padding: 10px 20px;margin: 0 auto;margin-top: 50px;padding-bottom: 30px;}
+
+#PlayerAll{padding: 0;}
+.container{width: 100%;}
+.container td:first-child { color: #FB667A;font-size: 1em;}
+.container th{width: 25%;}
+.container th:first-child{width: 50%;}
+}
