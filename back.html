@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>知識王後台</title>
+    <script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/scroll.css">
+</head>
+<style>
+    .sc_dot{
+        border-radius: 0;
+        padding: 10px 20px;
+        width: auto;
+        height: auto;
+    }
+    .says{
+        font-size: 24px;
+    }
+    .says>span:nth-child(1){
+        color: red;
+    }
+    .a1 .says>span:nth-child(2),.a3 .says>span:nth-child(2),.a2 .says>span:nth-child(3){
+        color:blue;
+    }
+    #emiter{margin-top: 15px;font-size: 18px;}
+    input{width: 320px;height: 30px;font-size: 28px;}
+</style>
+<body>
+    <h1>我是後台!!</h1>
+    <div class='back_opacity' id='back_opa'>
+            <div class='sc_con a1'>
+               
+            </div>
+            <div class='sc_con a2'>
+                    
+            </div>
+            <div class='sc_con a3'>
+                    
+            </div>
+          
+            <p class='dot_out'>
+            </p>
+    </div>
+    <div id="emiter">
+        <input type="text" id="send_value">
+        <button id="send_msgbtn">發送訊息</button>
+        <button id="send_stopplay">禁止對戰</button>
+        <button id="send_stopplay_back">恢復對戰</button>      
+    </div>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/scroll.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            $("#send_msgbtn").on('click',function(){
+                var val=$('#send_value').val();
+                socket.emit('send_msg',{say:val});
+               $('#send_value').val('');
+            });
+            $('#send_stopplay').on('click',function(){
+                socket.emit('stop_fight',{refuse_play:true});
+            });
+            $('#send_stopplay_back').on('click',function(){
+                socket.emit('stop_fight',{refuse_play:false});
+            });
+            var t1=new Scrolls_opa($('#back_opa'));
+            var myID;
+            var socket= io();  
+            socket.on("newclientconnect",function(){//--伺服器傳來自己進入後台   
+                socket.emit('gobacks');
+            });
+            socket.on("message",function(e){                
+                var num = 1305856000000;
+                var dd = new Date(num).toString();
+                if(e.stg==0){
+                    var a=e.name;
+                    $('.a1').append(
+                        `<p class='says'><span>${a}</span><span>登入</span><span>${dd}</span></p>`
+                    )
+                }else if(e.stg==1){
+                    var a=e.name;
+                    var aa=e.score;
+                    $('.a2').append(
+                        `<p class='says'><span>${a}</span><span>+</span><span>${aa}分</span><span>${dd}</span></p>`
+                    )
+                }else if(e.stg==2){
+                    var a=e.name;
+                    $('.a3').append(
+                        `<p class='says'><span>${a}</span><span>登出</span><span>${dd}</span></p>`
+                    )
+                }
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>

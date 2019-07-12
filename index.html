@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+	<title>WEBGENE知識王</title>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
+    <link rel="stylesheet" href="/css/index_new.css">
+    <link rel="stylesheet" href="/css/Marquee.css">
+  </head>
+  <style>
+
+  </style>
+  <body>
+    <div class='marquee_out' id='marqueeTeach'>  
+        <span class='marquee_in_say'>歡迎來到WEBGENE 知識王</span>
+        <span class='marquee_in_say'>首先請大家取一個帥氣的名字</span>
+        <span class='marquee_in_say'>然後就可以按對戰進行單挑了</span>
+    </div>
+	<div id="bigout">
+        <div id="Mydata">
+            <div id="Login">
+                <input type="text" placeholder="請輸入名字">
+                <button>確定</button>
+            </div>
+            <div id="Loged">
+                <p id="names">ID:<span></span></p>
+                <p id="scores">Score:<span></span></p>
+
+                <div class="buttontwo">
+                <br>
+                <button class="joingame">對戰</button>
+                <button id="For_rank">刷新排名</button>
+                </div>
+            </div>
+        </div>    
+        <div id="PlayerAll">
+           <!-- <p><span>ID:</span><span>分數:</span></p>-->
+           <table class="container">
+                <thead>
+                    <tr>
+                        <th><h1>名字</h1></th>
+                        <th><h1>天梯積分</h1></th>
+                        <th><h1>排名</h1></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="Playing">
+            <div id="playsearching">
+                <div class="searchingpic"></div>
+                <div id="Searching"><!--配對中-->
+                    <p>配對中...</p>
+                    <button>取消配對</button>
+                </div>
+            </div>
+            <div id="PlayArea">
+                <div id="Pmyself">
+                    <p></p><p></p>
+                    <div id="MyGameSC">本場分數:0</div>
+                </div>
+                <div id="Pother">
+                    <p></p><p></p>
+                    <div id="EnGameSC">本場分數:0</div>
+                </div>
+                <div id="QUS">                    
+                    <div id="ANStime">作答時間:<span>15s</span></div> 
+                    <p id="question"></p>   
+                    <!--<p class="choose"></p>-->
+                    <p class="choose"><span></span><span></span><span></span></p>
+                    <p class="choose"><span></span><span></span><span></span></p>
+                    <p class="choose"><span></span><span></span><span></span></p>
+                    <p class="choose"><span></span><span></span><span></span></p>
+                    <button>確認</button>
+                </div>
+                
+            </div>
+        </div>
+        <div id="Finished">
+                <div id="Panels">
+                    <div class="Content">
+                        <div class="resultpic"></div>
+                        <p class="Result">獲勝</p>
+                        <p class="GetPoints">天梯積分+50</p>
+                    </div>
+                    <span id="Closebtn">確認</span>
+                </div>        
+        </div>
+        <div id="back_message">
+
+        </div>
+        
+    </div>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/js/Marquee.js"></script>
+<script type="text/javascript" src="/js/main_fixing.js"></script>
+
+<script>
+</script>
+</body>
+</html>
